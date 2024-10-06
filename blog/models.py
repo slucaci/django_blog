@@ -40,6 +40,7 @@ class Post(models.Model):
         Orders by created_on date in descending order and then by author.
         """
         ordering = ['-created_on', 'author']
+        
 
     def __str__(self):
         """
