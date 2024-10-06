@@ -5,7 +5,14 @@ from django.contrib import messages
 
 def about_me(request):
     """
-    Renders the About page
+    Renders the most recent information on the website owner and allows user collaboration requests.
+    Displays an individual :model:`about.About`.
+    **Context**
+    ``about``
+        An instance of :model:`about.About`.
+    ``collaborate_form``
+        An instance of :form:`about.CollaborateForm`.
+    :template:`about/about.html`
     """
     about = About.objects.all().order_by('-updated_on').first()
     
